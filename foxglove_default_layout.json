@@ -45,12 +45,12 @@
     "3D!ov2ic4": {
       "cameraState": {
         "perspective": false,
-        "distance": 14.701837812496564,
+        "distance": 18.99999999999471,
         "phi": 57.04432595539518,
-        "thetaOffset": -26.5271116360062,
+        "thetaOffset": -26.527111636006275,
         "targetOffset": [
-          0.4791006559392128,
-          -0.9485316282973194,
+          0.4898038681215811,
+          -0.969973536384901,
           -2.965859891134103e-16
         ],
         "target": [
@@ -134,6 +134,33 @@
         },
         "frame:emcl_odom": {
           "visible": false
+        },
+        "frame:front_camera_link": {
+          "visible": false
+        },
+        "frame:front_camera_link_optical": {
+          "visible": false
+        },
+        "frame:front_mount": {
+          "visible": false
+        },
+        "frame:inertial_link": {
+          "visible": false
+        },
+        "frame:rear_mount": {
+          "visible": false
+        },
+        "frame:front_right_wheel_link": {
+          "visible": false
+        },
+        "frame:front_left_wheel_link": {
+          "visible": false
+        },
+        "frame:rear_left_wheel_link": {
+          "visible": false
+        },
+        "frame:rear_right_wheel_link": {
+          "visible": false
         }
       },
       "topics": {
@@ -174,18 +201,20 @@
         },
         "/scan": {
           "visible": false,
-          "colorField": "intensity",
+          "colorField": "range",
           "colorMode": "colormap",
-          "colorMap": "turbo"
+          "colorMap": "turbo",
+          "pointSize": 4
         },
         "/scan_for_amcl": {
           "visible": false
         },
         "/scan_for_move": {
-          "visible": false,
-          "colorField": "intensity",
+          "visible": true,
+          "colorField": "range",
           "colorMode": "colormap",
-          "colorMap": "turbo"
+          "colorMap": "turbo",
+          "pointSize": 5
         },
         "/scan_for_safety": {
           "visible": false,
@@ -194,14 +223,14 @@
           "colorMap": "turbo"
         },
         "/global_costmap/costmap": {
-          "visible": true,
+          "visible": false,
           "colorMode": "costmap"
         },
         "/local_costmap/costmap": {
           "visible": false
         },
         "/map": {
-          "visible": false
+          "visible": true
         },
         "/dlio/odom_node/pointcloud/deskewed": {
           "visible": false,
@@ -218,8 +247,8 @@
           "colorMap": "turbo"
         },
         "/points_raw": {
-          "visible": true,
-          "colorField": "z",
+          "visible": false,
+          "colorField": "x",
           "colorMode": "colormap",
           "colorMap": "turbo"
         },
@@ -233,7 +262,8 @@
           "visible": false
         },
         "/dlio/odom_node/pose": {
-          "visible": false
+          "visible": true,
+          "axisScale": 0.7
         },
         "/goal_pose": {
           "visible": false
@@ -284,7 +314,7 @@
           "visible": false
         },
         "/robot_description": {
-          "visible": true
+          "visible": false
         }
       },
       "layers": {},
@@ -340,24 +370,23 @@
         "poseEstimateThetaDeviation": 0.26179939
       },
       "imageMode": {
-        "imageTopic": "/camera/image_raw/compressed"
+        "imageTopic": "/front_camera/image_raw/compressed"
       }
     },
     "3D!11zsts1": {
       "cameraState": {
+        "distance": 9.753499582308562,
         "perspective": true,
-        "distance": 3.155584295764266,
-        "phi": 73.45794392523378,
-        "thetaOffset": 97.7102461485134,
-        "targetOffset": [
-          0.5194181403032309,
-          -0.7436433220893907,
-          3.0953359018604147e-16
-        ],
+        "phi": 61.675184214599525,
         "target": [
           0,
           0,
           0
+        ],
+        "targetOffset": [
+          1.5699026291542792,
+          -1.798333263701128,
+          2.1322781975105176e-16
         ],
         "targetOrientation": [
           0,
@@ -365,6 +394,7 @@
           0,
           1
         ],
+        "thetaOffset": 36.03511927553286,
         "fovy": 45,
         "near": 0.5,
         "far": 5000
@@ -413,11 +443,59 @@
         },
         "frame:velodyne_base_link": {
           "visible": false
+        },
+        "frame:marker": {
+          "visible": false
+        },
+        "frame:laser_link": {
+          "visible": false
+        },
+        "frame:front_camera_link": {
+          "visible": false
+        },
+        "frame:front_camera_link_optical": {
+          "visible": false
+        },
+        "frame:front_mount": {
+          "visible": false
+        },
+        "frame:inertial_link": {
+          "visible": false
+        },
+        "frame:rear_mount": {
+          "visible": false
+        },
+        "frame:lidar_link": {
+          "visible": false
+        },
+        "frame:fake_laser": {
+          "visible": false
+        },
+        "frame:world": {
+          "visible": false
+        },
+        "frame:front_right_wheel_link": {
+          "visible": false
+        },
+        "frame:front_left_wheel_link": {
+          "visible": false
+        },
+        "frame:rear_left_wheel_link": {
+          "visible": false
+        },
+        "frame:rear_right_wheel_link": {
+          "visible": false
+        },
+        "frame:301": {
+          "visible": false
+        },
+        "frame:emcl_odom": {
+          "visible": false
         }
       },
       "topics": {
         "/points_raw": {
-          "visible": true,
+          "visible": false,
           "colorField": "x",
           "colorMode": "colormap",
           "colorMap": "turbo",
@@ -425,6 +503,24 @@
         },
         "/robot_description": {
           "visible": true
+        },
+        "/dlio/odom_node/pointcloud/deskewed": {
+          "visible": true,
+          "colorField": "x",
+          "colorMode": "colormap",
+          "colorMap": "turbo",
+          "pointSize": 6
+        },
+        "/map": {
+          "visible": true,
+          "colorField": "timestamp",
+          "colorMode": "map",
+          "colorMap": "turbo",
+          "pointSize": 0
+        },
+        "/dlio/odom_node/pose": {
+          "visible": true,
+          "axisScale": 0.5
         }
       },
       "layers": {},
